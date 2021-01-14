@@ -20,7 +20,7 @@ namespace ProductStore
 
         public override void DisplayStats()
         {
-            Console.WriteLine($"Price per packing {nameProduct} = {priceProduct} $. Number of {nameProduct} in store = {weigtProduct} pieces.");
+            Program.ShowMessage($"Price per packing {nameProduct} = {priceProduct} $. Number of {nameProduct} in store = {weigtProduct} pieces.");
 
         }
 
