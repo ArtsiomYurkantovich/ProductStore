@@ -35,6 +35,7 @@ namespace ProductStore
             while (!RequestedExit)
             {
                 ShowCommands();
+                Console.WriteLine("Select the product you need to buy:");
                 WaitForCommand();
             }
         }
@@ -46,14 +47,14 @@ namespace ProductStore
 
             while (!int.TryParse(Console.ReadLine(), out command))
             {
-                Console.WriteLine($"Command doesn't exist\n");
+                Product.ShowErrorMsg($"Command doesn't exist\n");
             }
 
-            choiseOperationForFruits(command);
+            choiseOperation(command);
         }
 
 
-        private static void choiseOperationForFruits(int command)
+        private static void choiseOperation(int command)
         {
             switch ((Choise)command)
             {
