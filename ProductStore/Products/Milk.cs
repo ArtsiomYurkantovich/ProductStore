@@ -20,14 +20,14 @@ namespace ProductStore
 
         public override void DisplayStats()
         {
-            Program.ShowMessage($"Price per packing {nameProduct} = {priceProduct} $. Number of {nameProduct} in store = {weigtProduct} pieces.");
+            var message = $"Price per packing {nameProduct} = {priceProduct} $. Number of {nameProduct} in store = {weigtProduct} pieces.";
+
+            Program.ShowMessage(message);
 
         }
 
         protected override void CoastProduct(double amountProduct)
-
         {
-
             if (amountProduct > weigtProduct)
             {
                 ShowErrorMsg($"There are not so many {nameProduct} in store.");
@@ -35,11 +35,8 @@ namespace ProductStore
             else
             {
                 coastProduct = priceProduct * amountProduct;
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"Coast {nameProduct} per {amountProduct} packing  = {coastProduct} $.");
-                Console.ResetColor();
+                ShowResult($"Coast {nameProduct} per {amountProduct} packing  = {coastProduct} $.");
             }
         }
-
     }
 }

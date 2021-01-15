@@ -2,17 +2,6 @@
 
 namespace ProductStore
 {
-    enum Choise
-    {
-        Apple = 1,
-        Lemon,
-        Orange,
-        Butter,
-        Kefir,
-        Milk,
-        Exit,
-
-    }
     class Program
     {
         private static bool RequestedExit;
@@ -25,13 +14,11 @@ namespace ProductStore
 
         private static void Main(string[] args)
         {
-
             RunApplication();
         }
 
         private static void RunApplication()
         {
-
             while (!RequestedExit)
             {
                 ShowCommands();
@@ -42,7 +29,6 @@ namespace ProductStore
 
         private static void WaitForCommand()
         {
-
             int command;
 
             while (!int.TryParse(Console.ReadLine(), out command))
@@ -58,41 +44,36 @@ namespace ProductStore
         {
             switch ((Choise)command)
             {
-
                 case Choise.Apple:
                     apple.DisplayStats();
                     apple.DisplayCoast();
                     break;
 
                 case Choise.Lemon:
-
                     lemon.DisplayStats();
                     lemon.DisplayCoast();
                     break;
 
                 case Choise.Orange:
-
                     orange.DisplayStats();
                     orange.DisplayCoast();
                     break;
 
                 case Choise.Butter:
-
                     butter.DisplayStats();
                     butter.DisplayCoast();
                     break;
 
                 case Choise.Kefir:
-
                     kefir.DisplayStats();
                     kefir.DisplayCoast();
                     break;
 
                 case Choise.Milk:
-
                     milk.DisplayStats();
                     milk.DisplayCoast();
                     break;
+
                 case Choise.Exit:
                     RequestedExit = true;
                     break;
@@ -109,15 +90,16 @@ namespace ProductStore
                 $"5) {Choise.Kefir} - Kefir available in the store.",
                 $"6) {Choise.Milk} - Milk available in the store.",
                 $"7) {Choise.Exit} - Exit the programm.");
-
         }
         public static void ShowMessage(params string[] msgs)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
+
             foreach (var msg in msgs)
             {
                 Console.WriteLine(msg);
             }
+
             Console.ForegroundColor = ConsoleColor.White;
         }
     }
